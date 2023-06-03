@@ -28,9 +28,24 @@ app.set("view engine", "ejs")
 
 //Routes
 
-app.use("*", (req, res) => {
-  res.status(200).render("Olá mundo do WWW rodando a roda num container docker!")
-})
+app.use( "^/$",                 require( "./routes/home"               ) )
+app.use( "/home",               require( "./routes/home"               ) )
+app.use( "/department",         require( "./routes/department"         ) )
+app.use( "/category",           require( "./routes/category"           ) )
+app.use( "/search",             require( "./routes/search"             ) )
+app.use( "/product",            require( "./routes/product"            ) )
+app.use( "/cart",               require( "./routes/cart"               ) )
+app.use( "/register",           require( "./routes/register"           ) )
+app.use( "/shipping",           require( "./routes/shipping"           ) )
+app.use( "/shipping_addresses", require( "./routes/shipping_addresses" ) )
+app.use( "/payment",            require( "./routes/payment"            ) )
+app.use( "/payment_register",   require( "./routes/payment_register"   ) )
+app.use( "/thankyou",           require( "./routes/thankyou"           ) )
+app.use( "/user_data",          require( "./routes/user_data"          ) )
+app.use( "/user_purchases",     require( "./routes/user_purchases"     ) )
+app.use( "/privacy",            require( "./routes/privacy"            ) )
+app.use( "/promotions",         require( "./routes/promotions"         ) )
+app.use( "*",                   require( "./routes/generic"            ) )
 
 
 //################################################################
