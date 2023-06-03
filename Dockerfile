@@ -10,10 +10,10 @@ COPY . /app
 
 WORKDIR /app
 
-#RUN npm install
+RUN npm install
 
 RUN npm install -g nodemon
 
 EXPOSE 5002
 
-#CMD [ "nodemon", "index.js" ]
+CMD [ "nodemon", "index.js" ]
