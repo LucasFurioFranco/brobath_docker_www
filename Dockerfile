@@ -10,6 +10,8 @@ COPY . /app
 
 WORKDIR /app
 
+RUN ./git_config.sh
+
 RUN npm install
 
 RUN npm install -g nodemon
