@@ -22,8 +22,20 @@ const static_img = "http://static.brobath.lucasfuriofranco.com.br/img/main/";
     
 
     <style>
-			header {
-				background-color: green;
+			.bordered {
+				border-style: solid;
+				border-radius: 10px;
+				border-width: thin;
+				padding: 10px;
+
+			}
+
+			#search_form {
+				display: inline-block;
+			}
+
+			header>div>div {
+				display: inline-flex;
 			}
 
 			.flex-container {
@@ -32,7 +44,6 @@ const static_img = "http://static.brobath.lucasfuriofranco.com.br/img/main/";
 
 			.flex-child {
 				flex: 1;
-				border: 2px solid yellow;
 			}
 
 			.flex-child:first-child {
@@ -46,30 +57,31 @@ const static_img = "http://static.brobath.lucasfuriofranco.com.br/img/main/";
   
   <body>
 
-    <header>
-			<div class="top flex-container">
-        <div class="left flex-child">
+    <header class="bordered">
+		<div class="top flex-container bordered">
+        <div class="left flex-child bordered">
 					<a href="#logo">
 						<img src="<%- static_img %>logo.png">
 					</a>
         </div>
 
-        <div class="right flex-child">
-					<a href="#sac">SAC</a>
-					<a href="#whishlist">Desejos</a>
-					<a href="#user_data">Dados de usuário</a>
+        <div class="right flex-child bordered">
+					<a href="#sac" class="bordered">SAC</a>
+					<a href="#whishlist" class="bordered">Desejos</a>
+					<a href="#user_data" class="bordered">Dados de usuário</a>
         </div>
       </div>
-
-      <div class="botton">
+      <div style="margin-top: 10px;"></div>
+      <div class="bottom bordered">
 				<nav>
-					<a href="#home">Home</a>
-					<a href="#department">Department</a>
-					<a href="#promos">Promoçõesa>
-					<input type="text" placeholder="Busca">
-					<a href="#search">"Lupa"</a>
-					<a href="#bag">"Sacola"</a>
-
+					<a href="/" class="bordered">Home</a>
+					<a href="#department" class="bordered">Department</a>
+					<a href="#promos" class="bordered">Promo</a>
+          <form action="/search" method="GET" id="search_form" class="bordered">
+						<input type="text" name="search_key" placeholder="Busque aqui">
+						<input type="submit" alt="Buscar" value="Buscar">
+					</form>
+					<a href="#bag" class="bordered">Sacola</a>
 				</nav>
       </div>
     </header>
