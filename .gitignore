@@ -1,3 +1,7 @@
+#personal data
+git_config.sh
+git_config_2.sh
+
 # Logs
 logs
 *.log
