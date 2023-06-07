@@ -22,6 +22,7 @@ const static_img = "http://static.brobath.lucasfuriofranco.com.br/img/main/";
     
 
     <style>
+
 			.bordered {
 				border-style: solid;
 				border-radius: 10px;
@@ -34,22 +35,19 @@ const static_img = "http://static.brobath.lucasfuriofranco.com.br/img/main/";
 				display: inline-block;
 			}
 
-			header>div>div {
+			header>div {
+				display:flex;
+			}
+
+			header>div>span {
 				display: inline-flex;
 			}
 
-			.flex-container {
-				display: flex;
+			header>div:not(:first-child) {
+				margin-top: 10px;
 			}
 
-			.flex-child {
-				flex: 1;
-			}
-
-			.flex-child:first-child {
-				margin-right: 20px;
-			}
-    </style>
+   </style>
 
   </head>
   
@@ -59,30 +57,42 @@ const static_img = "http://static.brobath.lucasfuriofranco.com.br/img/main/";
 
     <header class="bordered">
 		<div class="top flex-container bordered">
-        <div class="left flex-child bordered">
+
+        <span class="left bordered">
 					<a href="#logo">
 						<img src="<%- static_img %>logo.png">
 					</a>
-        </div>
+        </span>
 
-        <div class="right flex-child bordered">
+        <span class="right bordered">
 					<a href="#sac" class="bordered">SAC</a>
 					<a href="#whishlist" class="bordered">Desejos</a>
 					<a href="#user_data" class="bordered">Dados de usuário</a>
-        </div>
+        </span>
+
       </div>
-      <div style="margin-top: 10px;"></div>
+
       <div class="bottom bordered">
+
 				<nav>
-					<a href="/" class="bordered">Home</a>
-					<a href="#department" class="bordered">Department</a>
-					<a href="#promos" class="bordered">Promo</a>
-          <form action="/search" method="GET" id="search_form" class="bordered">
-						<input type="text" name="search_key" placeholder="Busque aqui">
-						<input type="submit" alt="Buscar" value="Buscar">
-					</form>
-					<a href="#bag" class="bordered">Sacola</a>
+
+					<span>
+						<a href="/" class="bordered">Home</a>
+						<a href="#department" class="bordered">Department</a>
+						<a href="#promos" class="bordered">Promo</a>
+					</span
+
+					<span>
+	          <form action="/search" method="GET" id="search_form" class="bordered">
+							<input type="text" name="search_key" placeholder="Busque aqui">
+							<input type="submit" alt="Buscar" value="Buscar">
+						</form>
+						<a href="#bag" class="bordered">Sacola</a>
+
+					</span>
+
 				</nav>
+
       </div>
     </header>
 
